@@ -1,4 +1,4 @@
-function call_startbeginning () {
+function startbeginning () {
     scene.setTileMap(levels[currentLevel])
     scene.setTile(2, img`
         f f f f f f f f f f f f f f f f 
@@ -55,6 +55,9 @@ function call_startbeginning () {
         . . . . . . . . . . . . . . . . 
         `, true)
 }
+scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
+    scene.setBackgroundColor(8)
+})
 let levels: Image[] = []
 let mySprite: Sprite = null
 let currentLevel = 0
@@ -87,9 +90,9 @@ if (currentLevel == 0) {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        2 2 2 2 . . 7 7 7 7 . . 3 3 3 3 
-        2 2 2 2 . . 7 7 7 7 . . 3 3 3 3 
-        2 2 2 2 . . 7 7 7 7 . . 3 3 3 3 
+        . . 2 2 2 . . 7 7 7 . . 3 3 3 . 
+        . . 2 2 2 . . 7 7 7 . . 3 3 3 . 
+        . . 2 2 2 . . 7 7 7 . . 3 3 3 . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -115,4 +118,5 @@ if (currentLevel == 0) {
         . . . . . . . . . . . . . . . . 
         `]
     mySprite.setPosition(23, 53)
+    startbeginning()
 }
