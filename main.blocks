@@ -143,4 +143,38 @@ f f f f f f f 1 1 1 f f f f f f
 f f f f f f f 1 1 1 f f f f f f 
 f f f f f f f f f f f f f f f f 
 f f f f f f f f f f f f f f f f 
-`</field><data>{"commentRefs":[],"fieldData":{"img":"Uh3vIDt!s*A~B!+3`5!M"}}</data></shadow></value><value name="wall"><shadow type="toggleOnOff" id="F(v}l$IfdX6j(PehwZJ8"><field name="on">true</field></shadow></value></block></next></block></statement></block></xml>
+`</field><data>{"commentRefs":[],"fieldData":{"img":"Uh3vIDt!s*A~B!+3`5!M"}}</data></shadow></value><value name="wall"><shadow type="toggleOnOff" id="F(v}l$IfdX6j(PehwZJ8"><field name="on">true</field></shadow></value><next><block type="gamesettile" id="qDKb{(d%RF/|%-t_{m:2"><value name="index"><shadow type="colorindexpicker" id="O.FP!9$4OamM4bDu2^$`"><field name="index">7</field></shadow></value><value name="img"><shadow type="tile_image_picker" id="iSq8A%NfNXw/WTevnG|@"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . e e e e e . . . . . 
+. . . . . . e 5 5 5 e . . . . . 
+. . . . . . e 5 5 5 e . . . . . 
+. . . . . . . 5 5 5 . . . . . . 
+. . . . . 7 7 7 7 7 7 7 . . . . 
+. . . . . . . 7 7 7 . . . . . . 
+. . . . . . . 7 7 7 . . . . . . 
+. . . . . . . 7 7 7 . . . . . . 
+. . . . . . . 8 8 8 . . . . . . 
+. . . . . . . 8 8 8 . . . . . . 
+. . . . . . . 8 8 8 . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"iSq8A%NfNXw/WTevnG|@"}}</data></shadow></value><value name="wall"><shadow type="toggleOnOff" id="E=Bx}nx7%Wo99z[afd(3"><field name="on">true</field></shadow></value><next><block type="gamesettile" id="t+?pJ.{r:Z@ACj|6`$:*"><value name="index"><shadow type="colorindexpicker" id="LU]Ij2KZ:1m#:MQGf^=@"><field name="index">3</field></shadow></value><value name="img"><shadow type="tile_image_picker" id="?Z^7P*pH,/k8ugvFxLdN"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 4 4 4 4 4 . . . . . 
+. . . . . . 4 5 5 5 4 . . . . . 
+. . . . . . 4 5 5 5 4 . . . . . 
+. . . . . . 4 5 5 5 4 . . . . . 
+. . . . . 3 3 3 3 3 3 3 . . . . 
+. . . . . . . 3 3 3 . . . . . . 
+. . . . . . . 3 3 3 . . . . . . 
+. . . . . . . 3 3 3 . . . . . . 
+. . . . . . . c c c . . . . . . 
+. . . . . . . c c c . . . . . . 
+. . . . . . . c c c . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field><data>{"commentRefs":[],"fieldData":{"img":"?Z^7P*pH,/k8ugvFxLdN"}}</data></shadow></value><value name="wall"><shadow type="toggleOnOff" id="DR!(^M-yz];4HT#Z~$$~"><field name="on">true</field></shadow></value></block></next></block></next></block></next></block></statement></block></xml>
