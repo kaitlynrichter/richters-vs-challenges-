@@ -249,7 +249,7 @@ scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
         `)
 })
 scene.onHitTile(SpriteKind.Player, 14, function (sprite) {
-    restart = 0
+    game.over(false)
 })
 function startbeginning () {
     scene.setTileMap(levels[currentLevel])
@@ -326,40 +326,40 @@ function startbeginning () {
         . . . . . . . . . . . . . . . . 
         `, true)
     scene.setTile(5, img`
-        . . . . . . . 5 5 . . . . . . . 
-        . . . . . . 5 5 5 5 . . . . . . 
-        . . . . . . 5 5 5 5 . . . . . . 
-        . . . . . 5 5 5 5 5 5 . . . . . 
-        . . . . . 5 5 5 5 5 5 . . . . . 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-        . . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
-        . . . . . 5 5 5 5 5 5 . . . . . 
-        . . . . 5 5 5 5 5 5 5 5 . . . . 
-        . . . . 5 5 5 5 5 5 5 5 . . . . 
-        . . . 5 5 5 5 . . 5 5 5 5 . . . 
-        . . 5 5 5 . . . . . . 5 5 5 . . 
-        . 5 5 . . . . . . . . . . 5 5 . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . 5 5 5 . . 
+        . . . . 5 5 . . . 5 5 . 5 . . . 
+        . . . 5 . 5 5 5 5 . . 5 . . . . 
+        . . . 5 5 5 . 5 . . 5 . . . . . 
+        5 5 5 5 . . . 5 . 5 . . . . . . 
+        . 5 5 5 . . . . 5 . . . . . . . 
+        . . . 5 5 . . 5 . 5 . . . . . . 
+        . . . . . 5 5 . . . 5 . . . . . 
+        . . . . . 5 . 5 5 5 . 5 . . . . 
+        . . . . . 5 . . . . 5 5 5 . . . 
+        . . . . 5 . . . . . . . 5 . . . 
+        . . . . 5 . . . . . . . . . . . 
+        . . . 5 . . . . . . . . . . . . 
+        . . 5 5 . . . . . . . . . . . . 
         `, true)
     scene.setTile(14, img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . e e e e e e 
-        . . . . . . . . . . e . . . . . 
-        . . . . . . . . . . e . . . . . 
-        . . . . . e e e e e e . . . . . 
-        . . . . . e . . . . . . . . . . 
-        . . . . . e . . . . . . . . . . 
-        . . . . . e . . . . . . . . . . 
-        . . . . . e . . . . . . . . . . 
-        . . . . . e . . . . . . . . . . 
-        . . . . . e . . . . . . . . . . 
-        . . . . . e . . . . . . . . . . 
-        e e e e e e . . . . . . . . . . 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
+        e e e e e e e e e e e e e e e e 
         `, true)
     scene.setBackgroundImage(img`
         ................................................................................................................................................................
@@ -762,12 +762,15 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
             . . . . 1 1 1 . 1 1 1 . . . . . 
             . . . . 1 1 1 . 1 1 1 . . . . . 
             `, SpriteKind.Player)
+        mySprite2.setPosition(6, 105)
         controller.moveSprite(mySprite2, 100, 100)
         scene.cameraFollowSprite(mySprite)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, scene.backgroundImage(), function (sprite, location) {
+    game.over(false)
+})
 let mySprite2: Sprite = null
-let restart = 0
 let levels: Image[] = []
 let mySprite: Sprite = null
 let currentLevel = 0
@@ -816,7 +819,7 @@ if (currentLevel == 0) {
         . . . . . . . . . 5 . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
+        . . . . . . . 5 . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
