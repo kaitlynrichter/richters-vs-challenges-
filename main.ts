@@ -1,6 +1,7 @@
+namespace SpriteKind {
+    export const star = SpriteKind.create()
+}
 function nextLevelGroup () {
-    tiles.setTilemap(tilemap`level6`)
-    scene.setTileMap(levels[currentLevel])
     scene.setBackgroundImage(img`
         ................................................................................................................................................................
         ................................................................................................................................................................
@@ -123,6 +124,8 @@ function nextLevelGroup () {
         eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.................................................................................................................
         eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.................................................................................................................
         `)
+    tiles.setTilemap(tilemap`level6`)
+    scene.setTileMap(levels[currentLevel])
 }
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     scene.setBackgroundColor(7)
@@ -252,6 +255,27 @@ scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
 scene.onHitTile(SpriteKind.Player, 14, function (sprite) {
     game.over(false)
 })
+function star2 () {
+    mySprite4 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . 5 . . 5 . . 5 . . . . . 
+        . . . . . 5 . 5 . 5 . . . . . . 
+        . . . . . . 5 5 5 . . . . . . . 
+        . . . . 5 5 5 5 5 5 5 . . . . . 
+        . . . . . . 5 5 5 . . . . . . . 
+        . . . . . 5 . 5 . 5 . . . . . . 
+        . . . . 5 . . 5 . . 5 . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.star)
+    mySprite3.setPosition(118, 106)
+}
 function startbeginning () {
     scene.setTileMap(levels[currentLevel])
     scene.setTile(2, img`
@@ -613,6 +637,10 @@ scene.onHitTile(SpriteKind.Player, 3, function (sprite) {
         ................................................................................................................................................................
         `)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.star, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    mySprite4.destroy()
+})
 scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
     scene.setBackgroundColor(15)
     scene.setBackgroundImage(img`
@@ -738,6 +766,31 @@ scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
         ................................................................................................................................................................
         `)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    mySprite3.destroy()
+})
+function star () {
+    mySprite3 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . 5 . . 5 . . 5 . . . . . 
+        . . . . . 5 . 5 . 5 . . . . . . 
+        . . . . . . 5 5 5 . . . . . . . 
+        . . . . 5 5 5 5 5 5 5 . . . . . 
+        . . . . . . 5 5 5 . . . . . . . 
+        . . . . . 5 . 5 . 5 . . . . . . 
+        . . . . 5 . . 5 . . 5 . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Food)
+    mySprite3.setPosition(33, 71)
+}
 scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
     currentLevel += 1
     if (currentLevel == levels.length) {
@@ -766,12 +819,13 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
         mySprite2.setPosition(9, 105)
         controller.moveSprite(mySprite2, 100, 100)
         scene.cameraFollowSprite(mySprite)
+        star()
+        star2()
     }
 })
-scene.onOverlapTile(SpriteKind.Player, scene.backgroundImage(), function (sprite, location) {
-    game.over(false)
-})
 let mySprite2: Sprite = null
+let mySprite3: Sprite = null
+let mySprite4: Sprite = null
 let levels: Image[] = []
 let mySprite: Sprite = null
 let currentLevel = 0
@@ -816,11 +870,11 @@ if (currentLevel == 0) {
         `, img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . . 5 . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
         . . . . . . . . . 5 . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . . 5 . . . . . . . . . . . 
-        . . . . . . . 5 . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
@@ -831,6 +885,7 @@ if (currentLevel == 0) {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `]
+    info.setScore(0)
     mySprite.setPosition(25, 53)
     startbeginning()
 }
