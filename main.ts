@@ -1,5 +1,6 @@
 namespace SpriteKind {
     export const star = SpriteKind.create()
+    export const Testing = SpriteKind.create()
 }
 function nextLevelGroup () {
     scene.setBackgroundImage(img`
@@ -127,6 +128,10 @@ function nextLevelGroup () {
     tiles.setTilemap(tilemap`level6`)
     scene.setTileMap(levels[currentLevel])
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Testing, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+    mySprite3.destroy()
+})
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
     scene.setBackgroundColor(7)
     scene.setBackgroundImage(img`
@@ -766,10 +771,6 @@ scene.onHitTile(SpriteKind.Player, 1, function (sprite) {
         ................................................................................................................................................................
         `)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
-    mySprite3.destroy()
-})
 function star () {
     mySprite3 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -788,8 +789,8 @@ function star () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Food)
-    mySprite3.setPosition(33, 71)
+        `, SpriteKind.Testing)
+    mySprite.setPosition(46, 57)
 }
 scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
     currentLevel += 1
@@ -824,8 +825,8 @@ scene.onHitTile(SpriteKind.Player, 2, function (sprite) {
     }
 })
 let mySprite2: Sprite = null
-let mySprite3: Sprite = null
 let mySprite4: Sprite = null
+let mySprite3: Sprite = null
 let levels: Image[] = []
 let mySprite: Sprite = null
 let currentLevel = 0
