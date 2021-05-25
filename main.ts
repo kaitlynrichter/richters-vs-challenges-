@@ -126,7 +126,6 @@ function nextLevelGroup () {
         eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.................................................................................................................
         eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.................................................................................................................
         `)
-    tiles.setTilemap(tilemap`level6`)
     scene.setTileMap(levels[currentLevel])
 }
 scene.onHitTile(SpriteKind.Player, 7, function (sprite) {
